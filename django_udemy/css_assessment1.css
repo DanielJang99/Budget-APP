@@ -1,0 +1,46 @@
+body{
+    background-color: #15d1cb;
+}
+
+h1{
+    border: 1px solid black;
+}
+
+
+h3{
+    color: purple;
+}
+
+a{
+    color: red;
+}
+
+#overline{
+    text-decoration: overline;
+    color: blueviolet
+}
+
+ol + textarea{
+    border: 5px solid grey;
+}
+
+#info{
+    border: 1px solid crimson;
+}
+
+.div{
+    border: 3px dashed yellowgreen;
+    background: blue;
+}
+
+#line{
+    background: #e6c927;
+}
+
+p + textarea{
+    border: 1px solid skyblue;
+}
+
+a:visited{
+    color: blue;
+}

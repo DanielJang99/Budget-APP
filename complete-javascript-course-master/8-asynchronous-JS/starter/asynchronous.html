@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Asynchronous JavaScript</title>
+</head>
+<body>
+    <h1>Asynchronous JavaScript</h1>
+    <script>
+        // const second = () => {
+        //     setTimeout(() => {
+        //         console.log('async');
+        //     },2000);
+        // }
+        // const first = () => {
+        //     console.log('hey there');
+        //     second();
+        //     console.log('the end');
+        // }
+        // first();
+
+
+
+        // function getRecipe() {
+        //     setTimeout(() => {
+        //         const recipeID = [542,13,351,625];
+        //         console.log(recipeID);
+
+        //         setTimeout((id) => {
+        //             const recipe = {
+        //                 title: 'pasta',
+        //                 publisher: 'daniel'
+        //             };
+        //             console.log(`${id}: ${recipe.title}`);
+        //         }, 1000, recipeID[2]);
+        //     }, 1500);
+        // };
+        // getRecipe();
+
+
+
+
+        // constructing promise to avoid callback hell 
+        // const getIDs = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve([542,13,351,625]);
+        //     }, 1500);
+        // });
+
+        // const getRec = recID => {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(ID => {
+        //             const recipe = {title: 'pasta', publisher: 'daniel'};
+        //             resolve(`${ID}: ${recipe.title}`);
+        //             }, 1500, recID);
+        //     });
+        // };
+
+        // const getRelated = publisher => {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(pub => {
+        //             const recipe = {title: 'pizza', publisher: 'daniel'};
+        //             resolve(`${pub}: ${recipe.title}`);
+        //         }, 1500, publisher);
+        //     })
+        // };
+
+
+        //consuming Promise with then - 이건 옛날 방식 
+        // getIDs
+        // .then(IDs => {
+        //     console.log(IDs);
+        //     return getRec(IDs[2]);
+        // })
+        // .then(recipe => {
+        //     console.log(recipe);
+        //     return getRelated('daniel');
+        // })
+        // .then(recipe => {
+        //     console.log(recipe);
+        // })
+        // .catch(error => {
+        //     console.log(error);
+        // });
+
+        // consuming Promise with aync/await - 조금 모던 방식 
+        // async function getRecipesAW(){
+        //     const IDs = await getIDs;
+        //     console.log(IDs);
+        //     const recipe = await getRec(IDs[2]);
+        //     console.log(recipe);
+        //     const related = await getRelated('daniel');
+        //     console.log(related);
+
+        //     return recipe;
+        // }
+        // getRecipesAW().then(result => console.log(`${result} is da best`));
+
+
+
+        //making ajax calls with fetch 
+        // fetch returns promise by default 
+        // function getWeather(woeid){
+        //     fetch(`https://api.allorigins.win/get?url=https://www.metaweather.com/api/location/${woeid}/`)
+        //     .then(result => {
+        //         console.log(result);
+        //         return result.json(); //.json takes response stream and return it as promise 
+        //     })
+        //     .then(data =>{
+        //         // console.log(data);
+        //         const today = data.consolidated_weather[0];
+        //         console.log(today.min_temp);
+        //         console.log(today.max_temp);
+        //     })
+        //     .catch(er => {
+        //         console.log('there is error');
+        //     });
+        // };
+        // getWeather(2487956);
+
+        async function getWeatherAM(){
+            try{
+                const result = await fetch('https://www.scorebat.com/video-api/v1/');
+                // This is just an HTTP response, not the actual JSON. To extract the JSON body content from the response, we use the json() method 
+                const data = await result.json();
+                console.log(data);
+                const saliba = data[8];
+                console.log(saliba.url);
+            }
+            catch(error){
+                console.log(error);
+            }
+
+        }
+        getWeatherAM();
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+h1{
+    font-family: 'WaltographRegular'; 
+    font-weight: normal; 
+    font-style: normal; 
+    text-align: center
+}
+
+#one{
+    width: 130px;
+    padding-bottom: 400px;
+    margin-top: 20px;
+    margin-left: 270px;
+    background: #edeec9;
+}
+
+#two{
+    width: 130px;
+    padding-bottom: 400px;
+    margin-top: -416px;
+    margin-left: 420px;
+    background: #dde7c7;
+}
+
+#three{
+    width: 130px;
+    padding-bottom: 400px;
+    margin-top: -416px;
+    margin-left: 570px;
+    background: #bfd8bd;
+}
+
+#four{
+    width: 130px;
+    padding-bottom: 400px;
+    margin-top: -416px;
+    margin-left: 720px;
+    background: #98c9a3;
+
+}
+
+#five{
+    width: 130px;
+    padding-top: 400px;
+    margin-top: -416px;
+    margin-left:870px;
+    background: #77bfa3;
+}
+
