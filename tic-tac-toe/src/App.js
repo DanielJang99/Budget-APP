@@ -1,17 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import ClassComponent from './components/ClassComponent';
-import FunctionalComponent from './components/FunctionalComponent';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      {/* {name: Daniel, age = 22, children = undefined} => props */}
-      <ClassComponent name ='Daniel' age={22} isFemale = {true}/>
-      <FunctionalComponent name = 'HyunSeok' age={55} isFemale = {false}>고양이</FunctionalComponent>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <p>
+                    Edit <code>src/App.js</code> and save to reload.
+                </p>
+                <a
+                    className="App-link"
+                    href="https://reactjs.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Learn React with git
+                </a>
+            </header>
+        </div>
+    );
 }
 
 export default App;
